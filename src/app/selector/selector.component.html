@@ -1,0 +1,13 @@
+<p>
+  <i class="material-icons" (click)="prevMonth(-1)">
+    arrow_left
+  </i>
+
+  <span *ngIf="dateService.date | async as date">
+  {{ date | moment }}
+  </span>
+
+  <i class="material-icons" (click)="nextMonth(1)">
+    arrow_right
+  </i>
+</p>
