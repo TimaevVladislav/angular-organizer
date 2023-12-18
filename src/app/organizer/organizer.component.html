@@ -1,0 +1,32 @@
+<section>
+  <header>
+    Organizer: <strong>{{ dateService.date | async | moment:'DD.MM.YYYY' }}</strong>
+    <hr />
+  </header>
+
+  <main>
+    <ul>
+       <li class="task">
+         <span>
+           <strong>1</strong>
+         </span>
+
+         <button class="btn btn-primary">Remove</button>
+       </li>
+    </ul>
+  </main>
+
+  <footer>
+    <form (ngSubmit)="submit()" [formGroup]="form">
+      <input type="text" formControlName="title" />
+
+      <button
+        class="btn btn-primary btn-block"
+        [disabled]="form.invalid"
+        type="submit"
+      >
+        Add
+      </button>
+    </form>
+  </footer>
+</section>
